@@ -22,7 +22,12 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
+        "ecofin-blue": "hsl(var(--ecofin-blue))",
+        "ecofin-blue-dark": "hsl(var(--ecofin-blue-dark))",
+        "ecofin-gray": "hsl(var(--ecofin-gray))",
+        "ecofin-gray-light": "hsl(var(--ecofin-gray-light))",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

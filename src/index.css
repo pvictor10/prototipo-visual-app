@@ -17,8 +17,10 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* ECOFIN Brand Colors */
+    --primary: 204 83% 51%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 204 83% 45%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -31,6 +33,15 @@ All colors MUST be HSL.
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+
+    /* ECOFIN Specific Colors */
+    --ecofin-blue: 204 83% 51%;
+    --ecofin-blue-dark: 204 83% 45%;
+    --ecofin-gray: 0 0% 60%;
+    --ecofin-gray-light: 0 0% 95%;
+    
+    /* Gradients */
+    --gradient-splash: linear-gradient(135deg, hsl(204 83% 51%), hsl(204 83% 60%));
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
