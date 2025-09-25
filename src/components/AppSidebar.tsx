@@ -4,7 +4,8 @@ import {
   Target, 
   CreditCard, 
   TrendingUp, 
-  BookOpen 
+  BookOpen,
+  DollarSign 
 } from "lucide-react";
 
 import {
@@ -12,6 +13,8 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -28,27 +31,43 @@ const menuItems = [
 ];
 
 export function AppSidebar() {
-  const { state } = useSidebar();
-  const isCollapsed = state === "collapsed";
-
   return (
-    <Sidebar collapsible="offcanvas">
-      <SidebarContent>
+    <Sidebar variant="inset" className="border-r">
+      <SidebarHeader className="p-4">
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton size="lg" asChild className="touch-manipulation">
+              <a href="#" className="flex items-center gap-3 p-3">
+                <div className="flex aspect-square size-10 items-center justify-center rounded-xl bg-ecofin-blue text-white">
+                  <DollarSign className="size-5" />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-bold text-lg">ECOFIN</span>
+                  <span className="truncate text-xs text-muted-foreground">Gestão Financeira</span>
+                </div>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarHeader>
+
+      <SidebarContent className="px-2">
         <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <button className="flex items-center w-full p-3 text-left hover:bg-sidebar-accent hover:text-sidebar-accent-foreground">
-                      <item.icon className="mr-3 h-5 w-5" />
-                      {!isCollapsed && <span>{item.title}</span>}
-                    </button>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
+          <SidebarGroupLabel className="px-3 py-2 text-sm font-medium text-muted-foreground">
+            Menu Principal
+          </SidebarGroupLabel>
+          <SidebarMenu className="space-y-1">
+            {menuItems.map((item) => (
+              <SidebarMenuItem key={item.title}>
+                <SidebarMenuButton asChild className="touch-manipulation">
+                  <a href="#" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
+                    <item.icon className="size-5 text-ecofin-blue" />
+                    <span className="font-medium">{item.title}</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>

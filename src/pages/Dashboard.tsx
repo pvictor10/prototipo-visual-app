@@ -13,16 +13,17 @@ const Dashboard = () => {
         <AppSidebar />
         
         <div className="flex-1">
-          {/* Header */}
-          <div className="bg-ecofin-blue text-white p-4">
+          {/* Mobile Header */}
+          <div className="bg-ecofin-blue text-white p-4 safe-area-top">
             <div className="flex justify-between items-center">
-              <SidebarTrigger className="text-white hover:bg-white/10 p-1 rounded" />
-              <User className="w-6 h-6" />
+              <SidebarTrigger className="text-white hover:bg-white/10 p-2 rounded-lg touch-manipulation" />
+              <h1 className="text-lg font-semibold">ECOFIN</h1>
+              <User className="w-7 h-7 touch-manipulation" />
             </div>
           </div>
 
-          {/* Content */}
-          <div className="p-4 space-y-6">
+          {/* Mobile Content */}
+          <div className="p-4 space-y-4 pb-20">
             {/* Saldo Total */}
             <Card>
               <CardContent className="p-6">
@@ -114,11 +115,12 @@ const Dashboard = () => {
             </Card>
           </div>
 
-          {/* Bottom Navigation */}
-          <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border p-4">
-            <div className="flex justify-center">
-              <Button variant="ghost" size="sm" className="text-ecofin-blue">
+          {/* Mobile Bottom Navigation */}
+          <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border p-4 safe-area-bottom">
+            <div className="flex justify-center gap-8">
+              <Button variant="ghost" size="sm" className="text-ecofin-blue flex flex-col items-center gap-1 touch-manipulation">
                 <Home className="w-6 h-6" />
+                <span className="text-xs">Início</span>
               </Button>
             </div>
           </div>
